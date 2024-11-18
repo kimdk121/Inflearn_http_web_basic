@@ -27,4 +27,32 @@
 - IP와 거의 같다. + PORT + 체크섬 정도만 가능
 - 애플리케이션에서 추가 작업 필요
 
+#### PORT
+- IP 는 목적지 서버를 찾고, PORT는 그 서버의 애플리케이션을 찾는다.
+- FTP - 20, 21
+- TELNET - 23
+- HTTP - 80
+- HTTPS - 443
+
+#### DNS (Domain Name System)
+IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으면 IP를 반환해준다.
+
+## URI와 웹 브라우저 요청 흐름
+- URI (Uniform Resource Identifier)
+  - URL (Uniform Resource Locator)
+  - URN (Uniform Resource Name)
+- 프로토콜 (HTTPS)
+- 호스트명 (www.google.com)
+- 포트번호 (443)
+- 패스 (/search)
+- 쿼리 파라미터 (q=hello&hl=ko)
+
+
+
+
+
+
+
+
+
 
