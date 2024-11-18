@@ -41,11 +41,7 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
 - URI (Uniform Resource Identifier)
   - URL (Uniform Resource Locator)
   - URN (Uniform Resource Name)
-- 프로토콜 (HTTPS)
-- 호스트명 (www.google.com)
-- 포트번호 (443)
-- 패스 (/search)
-- 쿼리 파라미터 (q=hello&hl=ko)
+- 프로토콜 (HTTPS) - 호스트명 (www.google.com) - 포트번호 (443) - Path (/search) - 쿼리 파라미터 (q=hello&hl=ko)
 
 
 
