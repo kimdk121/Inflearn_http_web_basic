@@ -286,10 +286,24 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
   - Set-Cookie : max-age=3600 (3600초)
     - 0이나 음수를 지정하면 쿠키 삭제
   - 세션 쿠키 : 만료 날짜를 생략하면 브라우저 종료시 까지만 유지ㅣ
-
-
-
-
+- 도메인
+  - domain=example.org을 지정해서 쿠키 생성
+    - example.org는 물론이고
+    - dev.example.org도 쿠키 접근
+  - 생략하면
+    - example.org는 쿠키 접근
+    - dev.example.org는 쿠키 미접근
+- Path
+  - path=/home 이 경로를 포함한 하위 경로 페이지만 쿠키 접근
+- Secure
+  - 쿠키는 http, https 구분하지 않음
+  - Secure를 적용하면 https인 경우에만 전송
+- HttpOnly
+  - XSS 공격 방지
+  - 자바스크립트에서 접근 불가 (document.cookie)
+- SameSite
+  - XSRF 공격 방지
+  - 요청 도메인과 쿠키에 설정된 도메인이 같은 경우만 쿠키 전송
 
 
 
