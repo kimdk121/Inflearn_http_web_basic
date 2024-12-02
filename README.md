@@ -211,7 +211,30 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
     - 서버가 일시적인 과부하 또는 예정된 작업으로 잠시 요청을 처리할 수 없음
     - Retry-After 헤더 필드로 얼마뒤에 복구되는지 보낼 수 있음
 
-
+## HTTP 헤더
+- 표현
+  - Content-Type : 표현 데이터의 형식
+    - text/html;charset=UTF-8
+    - application/json
+    - image/png
+  - Content-Encoding : 표현 데이터의 압축 방식
+    - gzip
+    - deflate
+    - identity
+  - Content-Language : 표현 데이터의 자연 언어
+    - ko
+    - en
+    - en-US
+  - Content-Length : 표현 데이터의 길이
+    - 바이트 단위
+    - Transfer-Encoding (전송 코딩)을 사용하면 Content-Length를 사용하면 안됨
+- 협상
+  - Accept : 클라이언트가 선호하는 미디어 타입 전달
+    - Accept : text/*, text/plain, text/plain;format=flowed, */* (구체적인게 더 우선된다)
+  - Accept-Charset : 클라이언트가 선호하는 문자 인코딩
+  - Accept-Encoding : 클라이언트가 선호하는 압축 인코딩
+  - Accept-Language : 클라이언트가 선호하는 자연 언어
+    - Accept-Language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7 (1은 생략해도 됨, 숫자별로 우선순위)
 
 
 
