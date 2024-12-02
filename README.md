@@ -227,7 +227,7 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
     - en-US
   - Content-Length : 표현 데이터의 길이
     - 바이트 단위
-    - Transfer-Encoding (전송 코딩)을 사용하면 Content-Length를 사용하면 안됨
+    - Transfer-Encoding (분할 전)을 사용하면 Content-Length를 사용하면 안됨
 - 협상 헤더 (요청시에만 가능)
   - Accept : 클라이언트가 선호하는 미디어 타입 전달
     - Accept : text/*, text/plain, text/plain;format=flowed, */* (구체적인게 더 우선된다)
@@ -236,7 +236,15 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
   - Accept-Language : 클라이언트가 선호하는 자연 언어
     - Accept-Language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7 (1은 생략해도 됨, 숫자별로 우선순위)
 
-
+#### 전송방식
+- 단순 전송
+  - Content-Length : 3422
+- 압축 전송
+  - Content-Encoding : gzip
+- 분할 전송
+  - Transfer-Encoding : chunked
+- 범위 전송
+  - Content-Range : bytes 1001-2000 / 2000
 
 
 
