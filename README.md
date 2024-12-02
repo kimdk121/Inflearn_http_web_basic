@@ -247,6 +247,45 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
 - 범위 전송
   - Content-Range : bytes 1001-2000 / 2000
 
+#### 일반 정보
+- Referer : 이전 웹 페이지의 주소
+  - 현재 요청된 페이지의 이전 웹 페이지 주소
+- User-Agent : 유저 에이전트 애플리케이션 정보
+  - 클라이언트의 웹 브라우저 정보
+- Server : 요청을 처리하는 ORIGIN 서버의 소프트웨어 정보
+  - 예) apache/2.2.22 (Debian)
+- Date : 메시지가 발생한 날짜와 시간
+
+#### 특별한 정보
+- Host : 요청한 호스트 정보 (도메인)
+- Location : 페이지 리다이렉션
+- Allow : 허용 가능한 HTTP 메서드
+  - Allow : GET, HEAD, PUT
+- Retry-After : 유저 에이전트가 다음 요청을 하기까지 기다려야 하는 시간
+  - Retry-After : Fri, 31 Dec 1999 23:59:59 GMT (날짜 표기)
+  - Retry-After : 120 (초단위 표기)
+
+#### 인증
+- Authorization
+  - Authorization : Basic xxxxxxxxxxxxxx
+
+#### 쿠키
+- Set-Cookie : 서버에서 -> 클라이언트 쿠키 저장소
+  - 예) set-cookie : sessionId=abcde1234; expires=Sat, 26-Dec-2020 00:00:00 GMT; path=/; domain=.google.com; Secure
+- Cookie : 클라이언트 -> 서버
+- 사용처
+  - 사용자 로그인 세션 관리
+  - 광고 정보 트래킹
+- 쿠키정보는 항상 서버에 전송됨
+  - 네트워크 트래픽 추가 유발
+  - 최소한의 정보만 사용
+  - 서버에 전송하지 않고, 웹 브라우저 내부에 데이터를 저장하고 싶으면 웹 스토리지 (localStorage, sessionStorage) 참고
+- 쿠키 생명주기
+  - Set-Cookie : expires=Sat, 26-Dec-2020 00:00:00 GMT
+    - 만료일이 되면 쿠키 삭제
+  - Set-Cookie : max-age=3600 (3600초)
+    - 0이나 음수를 지정하면 쿠키 삭제
+  - 세션 쿠키 : 만료 날짜를 생략하면 브라우저 종료시 까지만 유지ㅣ
 
 
 
