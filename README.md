@@ -212,7 +212,7 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
     - Retry-After 헤더 필드로 얼마뒤에 복구되는지 보낼 수 있음
 
 ## HTTP 헤더
-- 표현
+- 표현 헤더
   - Content-Type : 표현 데이터의 형식
     - text/html;charset=UTF-8
     - application/json
@@ -228,7 +228,7 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
   - Content-Length : 표현 데이터의 길이
     - 바이트 단위
     - Transfer-Encoding (전송 코딩)을 사용하면 Content-Length를 사용하면 안됨
-- 협상
+- 협상 헤더 (요청시에만 가능)
   - Accept : 클라이언트가 선호하는 미디어 타입 전달
     - Accept : text/*, text/plain, text/plain;format=flowed, */* (구체적인게 더 우선된다)
   - Accept-Charset : 클라이언트가 선호하는 문자 인코딩
