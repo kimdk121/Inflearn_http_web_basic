@@ -335,7 +335,15 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
 - Cache-Control: no-store
   - 데이터에 민감한 정보가 있으므로 저장하면 안됨
  
-
+#### 프록시 캐시
+- Cache-Control: public
+  - 응답이 public 캐시에 저장됨
+- Cache-Control: private 
+  - 응답이 해당 사용자만을 위한 것임 private 캐시에 저장해야 함 (기본값)
+- Cache-Control: s-maxage
+  - 프록시 캐시에만 적용되는 max-age
+- Age: 60 (HTTP 헤더)
+  - 오리진 서버에서 응답 후 프록시 캐시 내에 머문 시간 (초)
 
 
 
