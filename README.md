@@ -313,6 +313,7 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
 - cache-control: max-age=60 (유효시간 60초)
 - max-age=60 (유효시간 60초)
 - Last-Modified: UTC시간 (마지막 수정일자)
+- ETag (Entity Tag hash값)
 
 #### 검증헤더
 - if-modified-since
@@ -320,12 +321,20 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
   2. 유효시간이 지나면 if-modified-since: 날짜는 Last-Modified로 다시 요청
   3. 변경된 것이 없으면 304 Not Modified 상태코드와 함께 HTTP Body 없이 헤더정보만 다시 response
   4. 변경된 것이 있으면 200 OK 상태코드와 함께 HTTP 헤더와 Body 같이 response
-- ETag (Entity Tag)
+- if-None-Match 
   1. cache-control과 ETag를 저장
   2. 유효시간이 지나면 if-None-Match: ETag 값으로 다시 요청
   3. 변경된 것이 없으면 304 Not Modified 상태코드와 함께 HTTP Body 없이 헤더정보만 다시 response
   4. 변경된 것이 있으면 200 OK 상태코드와 함께 HTTP 헤더와 Body 같이 response
 
+#### Cache-Control
+- Cache-Control: max-age
+  - 유효시간 초단위
+- Cache-Control: no-cache
+  - 데이터는 캐시해도 되지만 항상 원서버에 검증해야 함
+- Cache-Control: no-store
+  - 데이터에 민감한 정보가 있으므로 저장하면 안됨
+ 
 
 
 
