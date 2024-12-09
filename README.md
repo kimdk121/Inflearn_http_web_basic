@@ -305,6 +305,29 @@ IP는 외우기 어렵기 때문에 도메인을 DNS 서버에 등록해놓으�
   - XSRF 공격 방지
   - 요청 도메인과 쿠키에 설정된 도메인이 같은 경우만 쿠키 전송
 
+## HTTP 헤더2
+#### 캐시
+- 데이터가 변경되지 않아도 계속 네트워크를 통해서 데이터를 다운로드 받아야 한다.
+- 캐시가 적용되어 있으면 유효시간 동안 네트워크를 사용하지 않아도 된다.
+- 캐시 유효시간이 초과되면 서버를 통해 다시 데이터를 조회하고 캐시를 갱신한다.
+- cache-control: max-age=60 (유효시간 60초)
+- max-age=60 (유효시간 60초)
+- Last-Modified: UTC시간 (마지막 수정일자)
+
+#### 검증헤더
+- if-modified-since
+  1. cache-control과 Last-Modified를 저장
+  2. 유효시간이 지나면 if-modified-since: 날짜는 Last-Modified로 다시 요청
+  3. 변경된 것이 없으면 304 Not Modified 상태코드와 함께 HTTP Body 없이 헤더정보만 다시 response
+  4. 변경된 것이 있으면 200 OK 상태코드와 함께 HTTP 헤더와 Body 같이 response
+- ETag (Entity Tag)
+  1. cache-control과 ETag를 저장
+  2. 유효시간이 지나면 if-None-Match: ETag 값으로 다시 요청
+  3. 변경된 것이 없으면 304 Not Modified 상태코드와 함께 HTTP Body 없이 헤더정보만 다시 response
+  4. 변경된 것이 있으면 200 OK 상태코드와 함께 HTTP 헤더와 Body 같이 response
+
+
+
 
 
 
